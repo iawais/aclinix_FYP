@@ -24,7 +24,12 @@ dependencies:
   flutter:
     sdk: flutter
   lite_rolling_switch: ^0.1.1
-
+  curved_navigation_bar: ^0.3.7
+  font_awesome_flutter: ^9.1.0
+  wave: ^0.2.0
+  google_maps_flutter: ^2.0.6
+  fluttertoast: ^8.0.7
+  geolocator: ^7.1.0
 
 
   # The following adds the Cupertino Icons font to your application.

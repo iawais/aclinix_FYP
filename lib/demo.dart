@@ -35,7 +35,7 @@ class _DemoScreenState extends State<DemoScreen> {
                 textOn: 'Patient',
                 textOff: 'Doctor',
                 colorOn: Colors.cyan,
-                colorOff: Colors.red[400],
+              //  colorOff: Colors.red[400],
                 iconOn: Icons.accessible_rounded,
                 iconOff: Icons.wheelchair_pickup_outlined,
                 animationDuration: Duration(milliseconds: 250),

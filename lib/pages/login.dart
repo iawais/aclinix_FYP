@@ -1,3 +1,4 @@
+import 'package:aclinix/pages/home.dart';
 import 'package:aclinix/pages/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:lite_rolling_switch/lite_rolling_switch.dart';
@@ -16,50 +17,7 @@ class _LoginState extends State<Login> {
   var emailController = TextEditingController();
   var passController = TextEditingController();
 
-/*  double togglePadding = 45;
-  IconData toggleIcon = Icons.accessible_rounded;
-  bool doc = false;
 
-  Widget _toggle(){
-    return GestureDetector(
-      onTap: (){
-        if(doc)
-          setState(() {
-            togglePadding = 40;
-            toggleIcon = Icons.wheelchair_pickup_sharp;
-            doc = false;
-          });
-        else
-          setState(() {
-            togglePadding = 5;
-            toggleIcon = Icons.accessible_rounded;
-            doc = true;
-          });
-      },
-      child: Container(
-        height: 35,
-        width: 75,
-        decoration: BoxDecoration(
-          color: Colors.blue,
-          borderRadius: BorderRadius.all(Radius.circular(35)),
-        ),
-        child: Row(
-          children: [
-            SizedBox(width: togglePadding),
-            Container(
-              height: 30,
-              width: 30,
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.all(Radius.circular(100)),
-              ),
-              child: Icon(toggleIcon, color: Colors.white,),
-            )
-          ],
-        ),
-      )
-    );
-  }*/
   void _eyePress(){
     setState(() {
       if(passHidden) {
@@ -158,12 +116,9 @@ class _LoginState extends State<Login> {
     );
   }
 
-
-
-
   Widget _submitButton() {
     return InkWell(
-      //onTap: () => ,
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Home())) ,
       child: Container(
         height: 45,
         margin: EdgeInsets.fromLTRB(65, 0, 65, 0),
@@ -197,7 +152,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.grey[300],
         body: SingleChildScrollView(
           child: Column(
           children: [
@@ -214,7 +169,7 @@ class _LoginState extends State<Login> {
                 Positioned(
                     width: 150,
                     height: 150,
-                    bottom: 200,
+                    bottom: MediaQuery.of(context).size.height/2.3 + 15,
                     right: 0,
                     child: Image(
                       image: AssetImage("assets/images/stethoscope.png"),
