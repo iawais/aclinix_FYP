@@ -5,11 +5,6 @@ import 'package:aclinix/pages/patientprofile.dart';
 import 'package:aclinix/pages/speaialists.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:wave/config.dart';
-import 'package:wave/wave.dart';
-
 
 class Home extends StatefulWidget {
 
@@ -70,18 +65,17 @@ class _HomeState extends State<Home> {
           index: 0,
           height: 50.0,
           items: <Widget>[
-            Icon(Icons.home, size: 30,color: Theme.of(context).accentColor,),
-            Icon(Icons.map_outlined, size: 30,color: Theme.of(context).accentColor,),
-            Icon(Icons.call_split, size: 30,color: Theme.of(context).accentColor,),
-            Icon(Icons.perm_identity, size: 30,color: Theme.of(context).accentColor,),
+            Icon(Icons.home_outlined, size: 30,color: Theme.of(context).accentColor,),
+            Icon(Icons.add_business_outlined, size: 30,color: Theme.of(context).accentColor,),
+            Icon(Icons.assignment_ind_outlined, size: 30,color: Theme.of(context).accentColor,),
+            Icon(Icons.account_circle_outlined  , size: 30,color: Theme.of(context).accentColor,),
           ],
           color: Colors.white,
           buttonBackgroundColor: Colors.white,
           backgroundColor: Colors.grey[300],
           animationCurve: Curves.easeInOutQuint,
-          animationDuration: Duration(milliseconds: 300),
+          animationDuration: Duration(milliseconds: 600),
           onTap: (index) {
-            Fluttertoast.showToast(msg: "toast");
             setState(() {
              selectedIndex = index;
             });

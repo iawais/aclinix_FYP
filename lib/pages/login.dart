@@ -169,8 +169,8 @@ class _LoginState extends State<Login> {
                 Positioned(
                     width: 150,
                     height: 150,
-                    bottom: MediaQuery.of(context).size.height/2.3 + 15,
-                    right: 0,
+                    bottom: MediaQuery.of(context).size.height/3 ,
+                    right: -20,
                     child: Image(
                       image: AssetImage("assets/images/stethoscope.png"),
                     )
@@ -200,10 +200,11 @@ class _LoginState extends State<Login> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Image(image: AssetImage("assets/images/front.png",),width: 100,height: 100,),
+                                Image(image: AssetImage("assets/images/logowhite.png",),width: 100,height: 100,),
                                 Text('ACLINIX',
                                   style: TextStyle(
-                                    fontSize: 30,
+                                    fontSize: 35,
+                                    fontWeight: FontWeight.bold,
                                     fontFamily: 'AgencyFb',
                                     color: Colors.white,
                                     decoration: TextDecoration.none,

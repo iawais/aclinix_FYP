@@ -24,7 +24,8 @@ class _HomePageState extends State<HomePage> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset('assets/images/logo2.png', fit: BoxFit.contain,height: 45,),
+        Image.asset('assets/images/logowhite.png', fit: BoxFit.contain,width: 35,height: 35,),
+        SizedBox(width: 3,),
         Text(
           'ACLINIX',
           style: TextStyle(
@@ -87,17 +88,18 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _mainCard(){
-    return Card(
-      elevation: 5,
-
-      shadowColor: Theme.of(context).accentColor,
+    return ClipPath(
+          clipper: ShapeBorderClipper(shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(7)
+      )),
       child: Container(
         padding: EdgeInsets.fromLTRB(0, 8, 0, 0),
         height: 110,
         width: 110,
         decoration:  BoxDecoration(
             borderRadius: BorderRadius.circular(7),
-            border: Border.all( color: Color(0xFF322e8d), width: 2)
+            border: Border.all( color: Color(0xFF322e8d), width: 2),
+            color: Colors.white
         ),
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -113,6 +115,8 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+
+
   }
 
   Widget _waveWidget(){
@@ -143,8 +147,8 @@ class _HomePageState extends State<HomePage> {
           ),
         )
     );
-
   }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -250,26 +254,26 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         Positioned(
-            top: 160,
-            left: MediaQuery.of(context).size.width/2 -80,
-            child: Container(
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  colors: [Colors.white, Color(0xffb9a6ed)],
-                ),
+          top: 160,
+          left: MediaQuery.of(context).size.width/2 -80,
+          child: Container(
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: RadialGradient(
+                colors: [Colors.white, Color(0xffb9a6ed)],
               ),
-              child: Stack(
-                children: [
-                  CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    child: _waveWidget(),
-                    radius: 80,
-                  )
-                ],
-              ),
-            )
+            ),
+            child: Stack(
+              children: [
+                CircleAvatar(
+                  backgroundColor: Colors.transparent,
+                  child: _waveWidget(),
+                  radius: 80,
+                )
+              ],
+            ),
+          )
         ),
       ],
     );
