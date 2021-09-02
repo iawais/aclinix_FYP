@@ -157,12 +157,12 @@ class _NearMeHospitalsState extends State<NearMeHospitals> {
                         fontWeight: FontWeight.w500
                     ),
                   ),
-                  height: MediaQuery.of(context).size.height*0.5,
+                  height: MediaQuery.of(context).size.height*0.45,
                   width: MediaQuery.of(context).size.width,
                   color: Color(0xFF322e8d),
                 ),
                 Container(
-                  height: MediaQuery.of(context).size.height*0.5,
+                  height: MediaQuery.of(context).size.height*0.45,
                   width: MediaQuery.of(context).size.width,
                   color: Colors.grey[200],
                 )
@@ -172,7 +172,7 @@ class _NearMeHospitalsState extends State<NearMeHospitals> {
               top: 40,
               child:  Container(
                   alignment: Alignment.bottomCenter,
-                  height: MediaQuery.of(context).size.height*0.78,
+                  height: MediaQuery.of(context).size.height*0.8,
                   width: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.fromLTRB(25, 25, 25, 0),
                   child: ClipPath(

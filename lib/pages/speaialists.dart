@@ -205,7 +205,7 @@ class _SpecialistsState extends State<Specialists> {
     return Visibility(
       visible: aVisible,
         child: Container(
-          height: MediaQuery.of(context).size.height-222,
+          height: MediaQuery.of(context).size.height*0.68,
           child: ListView(
             physics: BouncingScrollPhysics(),
             scrollDirection: Axis.vertical ,
@@ -226,7 +226,7 @@ class _SpecialistsState extends State<Specialists> {
     return Visibility(
         visible: bVisible,
         child: Container(
-          height: MediaQuery.of(context).size.height-222,
+          height: MediaQuery.of(context).size.height*0.68,
           child: ListView(
             physics: BouncingScrollPhysics(),
             scrollDirection: Axis.vertical ,
@@ -247,7 +247,7 @@ class _SpecialistsState extends State<Specialists> {
     return Visibility(
         visible: cVisible,
         child:Container(
-          height: MediaQuery.of(context).size.height-222,
+          height: MediaQuery.of(context).size.height*0.68,
           child: ListView(
             physics: BouncingScrollPhysics(),
             scrollDirection: Axis.vertical ,
@@ -268,7 +268,7 @@ class _SpecialistsState extends State<Specialists> {
     return Visibility(
         visible: dVisible,
         child:Container(
-          height: MediaQuery.of(context).size.height-222,
+          height: MediaQuery.of(context).size.height*0.68,
           child: ListView(
             physics: BouncingScrollPhysics(),
             scrollDirection: Axis.vertical ,
@@ -289,7 +289,7 @@ class _SpecialistsState extends State<Specialists> {
     return Visibility(
         visible: fVisible,
         child: Container(
-          height: MediaQuery.of(context).size.height-222,
+          height: MediaQuery.of(context).size.height*0.68,
           child: ListView(
             physics: BouncingScrollPhysics(),
             scrollDirection: Axis.vertical ,
