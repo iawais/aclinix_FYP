@@ -1,6 +1,8 @@
 import 'package:aclinix/pages/homepage.dart';
+import 'package:aclinix/pages/mainDrawer.dart';
 import 'package:aclinix/pages/navbar_key.dart';
 import 'package:aclinix/pages/nearMeHospitals.dart';
+import 'package:aclinix/pages/notifications.dart';
 import 'package:aclinix/pages/patientprofile.dart';
 import 'package:aclinix/pages/speaialists.dart';
 import 'package:flutter/material.dart';
@@ -23,40 +25,9 @@ class _HomeState extends State<Home> {
     return SafeArea(
       child:  Scaffold(
 
-        backgroundColor: Colors.grey[300],
-        drawer: Drawer(
-
-          child: ListView(
-            // Important: Remove any padding from the ListView.
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Text('Drawer Header'),
-              ),
-              ListTile(
-                title: Text('Item 1'),
-                onTap: () {
-                  // Update the state of the app
-                  // ...
-                  // Then close the drawer
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: Text('Item 2'),
-                onTap: () {
-                  // Update the state of the app
-                  // ...
-                  // Then close the drawer
-                  Navigator.pop(context);
-                },
-              ),
-            ],
-          ),
-        ),
+        backgroundColor: Colors.grey[200],
+        drawer: MainDrawer('Home'),
+        endDrawer: Notifications(),
 
         body:screens[selectedIndex],
 
@@ -72,7 +43,7 @@ class _HomeState extends State<Home> {
           ],
           color: Colors.white,
           buttonBackgroundColor: Colors.white,
-          backgroundColor: Colors.grey[300],
+          backgroundColor: Colors.grey[200],
           animationCurve: Curves.easeInOutQuint,
           animationDuration: Duration(milliseconds: 600),
           onTap: (index) {

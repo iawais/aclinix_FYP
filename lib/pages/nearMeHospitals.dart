@@ -14,7 +14,7 @@ class _NearMeHospitalsState extends State<NearMeHospitals> {
 
   Completer<GoogleMapController> _controller = Completer();
   late Future<Position> position;
-  static const LatLng _center = const LatLng(45.521563, -122.677433);
+  static const LatLng _center = const LatLng(31.45065246738863, 74.2914555919267);
   var width;
 
   void _onMapCreated(GoogleMapController controller) {
@@ -124,13 +124,13 @@ class _NearMeHospitalsState extends State<NearMeHospitals> {
   }
 
   static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
-    zoom: 15,
+    target: LatLng(31.45065246738863, 74.2914555919267),
+    zoom: 25,
   );
 
   static final CameraPosition _kLake = CameraPosition(
       bearing: 192.8334901395799,
-      target: LatLng(37.43296265331129, -122.08832357078792),
+      target: LatLng(31.45065246738863, 74.2914555919267),
       tilt: 59.440717697143555,
       zoom: 20);
 
@@ -157,14 +157,14 @@ class _NearMeHospitalsState extends State<NearMeHospitals> {
                         fontWeight: FontWeight.w500
                     ),
                   ),
-                  height: (MediaQuery.of(context).size.height/2)-37,
+                  height: MediaQuery.of(context).size.height*0.5,
                   width: MediaQuery.of(context).size.width,
                   color: Color(0xFF322e8d),
                 ),
                 Container(
-                  height: (MediaQuery.of(context).size.height/2)-37,
+                  height: MediaQuery.of(context).size.height*0.5,
                   width: MediaQuery.of(context).size.width,
-                  color: Colors.grey[300],
+                  color: Colors.grey[200],
                 )
               ],
             ),
@@ -172,7 +172,7 @@ class _NearMeHospitalsState extends State<NearMeHospitals> {
               top: 40,
               child:  Container(
                   alignment: Alignment.bottomCenter,
-                  height: MediaQuery.of(context).size.height-130,
+                  height: MediaQuery.of(context).size.height*0.78,
                   width: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.fromLTRB(25, 25, 25, 0),
                   child: ClipPath(
@@ -181,7 +181,7 @@ class _NearMeHospitalsState extends State<NearMeHospitals> {
                     )),
                     child: GoogleMap(
                       initialCameraPosition: CameraPosition(
-                      target: LatLng(22.5448133,88.343691),
+                      target: LatLng(31.45065246738863, 74.2914555919267 ),
                       zoom: 15
                     ),
                   ),

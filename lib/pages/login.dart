@@ -48,7 +48,7 @@ class _LoginState extends State<Login> {
                       decoration: InputDecoration(
                           fillColor: Colors.white,
                           filled: true,
-                          hintText: 'Email',
+                          hintText: 'Email:',
                           hintStyle: TextStyle( fontSize: 15, color: Theme.of(context).accentColor),
                           contentPadding: EdgeInsets.all(15),
                           focusedBorder: new OutlineInputBorder(
@@ -69,7 +69,6 @@ class _LoginState extends State<Login> {
               ]
           ),
         ),
-        SizedBox(height: 5,),
         // Password
         Container(
           margin: EdgeInsets.fromLTRB(15.5, 0, 15.5, 10),
@@ -87,7 +86,7 @@ class _LoginState extends State<Login> {
                       decoration: InputDecoration(
                           fillColor: Colors.white,
                           filled: true,
-                          hintText: 'Password',
+                          hintText: 'Password:',
                           hintStyle: TextStyle( fontSize: 15, color: Theme.of(context).accentColor),
                           contentPadding: EdgeInsets.all(15),
                           suffixIcon: IconButton(
@@ -128,7 +127,7 @@ class _LoginState extends State<Login> {
             borderRadius: BorderRadius.all(Radius.circular(25)),
             color: Color(0xFF322e8d)),
         child: Text(
-          'Log In',
+          'Login',
           style: TextStyle(fontSize: 20, color: Colors.white,fontWeight: FontWeight.w500),
         ),
       ),
@@ -154,36 +153,27 @@ class _LoginState extends State<Login> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
         body: SingleChildScrollView(
-          child: Column(
-          children: [
-            Stack(
+          child: Stack(
               children: [
+
                 Positioned(
-                  top: -130,
-                  left: 0,
-                  child: Image(
-                    image: AssetImage("assets/images/doctor.png"),
-                    width: MediaQuery.of(context).size.width,
-                  )
-                ),
-                Positioned(
-                    width: 150,
-                    height: 150,
-                    bottom: MediaQuery.of(context).size.height/3 ,
-                    right: -20,
+                    bottom: MediaQuery.of(context).size.height*0.5,
+                    left: 0,
                     child: Image(
-                      image: AssetImage("assets/images/stethoscope.png"),
+                      image: AssetImage("assets/images/logindoc.png"),
+                      width: MediaQuery.of(context).size.width,
                     )
                 ),
-                Positioned(
-                  width: 100,
-                  height: 100,
-                  bottom: 0,
-                  left: 0,
-                  child: Image(
-                    image: AssetImage("assets/images/meds.png"),
 
-                  )
+                Positioned(
+                    width: 100,
+                    height: 100,
+                    bottom: 0,
+                    left: -5,
+                    child: Image(
+                      image: AssetImage("assets/images/meds.png"),
+
+                    )
                 ),
                 Container(
                     alignment: Alignment.center,
@@ -193,45 +183,41 @@ class _LoginState extends State<Login> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
-                          flex: 7,
-                          child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children:[
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Image(image: AssetImage("assets/images/logowhite.png",),width: 100,height: 100,),
-                                Text('ACLINIX',
-                                  style: TextStyle(
-                                    fontSize: 35,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'AgencyFb',
-                                    color: Colors.white,
-                                    decoration: TextDecoration.none,
-                                    letterSpacing: 3
+                            flex: 8,
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children:[
+                                  Image(image: AssetImage("assets/images/logowhite.png",),width: 120,height: 100,),
+                                  Text('ACLINIX',
+                                    style: TextStyle(
+                                        fontSize: 35,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'AgencyFb',
+                                        color: Colors.white,
+                                        decoration: TextDecoration.none,
+                                        letterSpacing: 8
+                                    ),
                                   ),
-                                )
-                              ],
-                            ),
-                            Text("Here for you, Because of you",
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.white,
-                                decoration: TextDecoration.none,
-                                letterSpacing: 0,
-                                wordSpacing: 0
-                              ),
-                            ),
-                          ]
-                        )
+                                  Text("Here for you, Because of you!",
+                                    style: TextStyle(
+                                        fontSize: 13,
+                                        color: Colors.white,
+                                        decoration: TextDecoration.none,
+                                        letterSpacing: 0,
+                                        wordSpacing: 0
+                                    ),
+                                  ),
+                                ]
+                            )
                         ),
                         Text('Login',
                           style: TextStyle(
-                            color: Theme.of(context).accentColor,
-                            fontSize: 45,
-                            fontWeight: FontWeight.w600
+                              color: Theme.of(context).accentColor,
+                              fontSize: 45,
+                              fontWeight: FontWeight.w400
                           ),
                         ),
+                        SizedBox(height: 10),
                         Expanded(
                           flex: 6,
                           child: Column(
@@ -249,9 +235,7 @@ class _LoginState extends State<Login> {
                     )
                 )
               ]
-            ),
-          ],
-        )
+          ),
       )
     );
   }

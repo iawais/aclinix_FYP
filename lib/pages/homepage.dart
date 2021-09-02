@@ -1,11 +1,5 @@
-import 'package:aclinix/pages/navbar_key.dart';
-import 'package:aclinix/pages/nearMeHospitals.dart';
-import 'package:aclinix/pages/patientprofile.dart';
-import 'package:aclinix/pages/speaialists.dart';
+import 'package:aclinix/pages/notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
 
@@ -45,7 +39,7 @@ class _HomePageState extends State<HomePage> {
       margin: EdgeInsets.fromLTRB(5, 5, 5, 3),
       padding: EdgeInsets.fromLTRB(8, 3, 8, 3),
       width: MediaQuery.of(context).size.width,
-      height: 45,
+      height: 53,
       decoration: BoxDecoration(
         color: Theme.of(context).accentColor,
         borderRadius: BorderRadius.circular(5),
@@ -77,7 +71,8 @@ class _HomePageState extends State<HomePage> {
                 return InkWell(
                   child: Icon(Icons.notification_important_outlined,color: Theme.of(context).primaryColor,),
                   onTap: (){
-                    Scaffold.of(context).openDrawer();
+                    Scaffold.of(context).openEndDrawer();
+                    print("asd");
                   },
                 );
               }
@@ -115,8 +110,6 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
-
-
   }
 
   Widget _waveWidget(){
@@ -154,17 +147,17 @@ class _HomePageState extends State<HomePage> {
     return Stack(
       children: [
         Positioned(
-          top: MediaQuery.of(context).size.height/3 + 15,
+          top: MediaQuery.of(context).size.height/2.5 ,
           left: 0,
-          height: 100,
-          width: 100,
+          height: 80,
+          width: 80,
           child: Image(image: AssetImage('assets/images/meds.png')),
         ),
         Positioned(
-          top: MediaQuery.of(context).size.height/3 + 15,
-          right: -20,
-          height: 130,
-          width: 130,
+          bottom: MediaQuery.of(context).size.height/3,
+          right: 0,
+          height: 100,
+          width: 100,
           child: Image(image: AssetImage('assets/images/stethoscope.png')),
         ),
         Column(
@@ -172,30 +165,43 @@ class _HomePageState extends State<HomePage> {
             Stack(
               children: [
                 Container(
-                  height: 250.0,
+                  height: MediaQuery.of(context).size.height*0.44,
                   decoration: new BoxDecoration(
                     color: Colors.indigo[300],
                     borderRadius: BorderRadius.vertical(
                         bottom: Radius.elliptical(
-                            MediaQuery.of(context).size.width, 100.0)),
+                            MediaQuery.of(context).size.width, MediaQuery.of(context).size.width/1.5)),
                   ),
                 ),
                 Container(
-                  height: 245.0,
+                  height: MediaQuery.of(context).size.height*0.43,
                   decoration: new BoxDecoration(
                     color: Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.vertical(
                         bottom: Radius.elliptical(
-                            MediaQuery.of(context).size.width, 100.0)),
+                            MediaQuery.of(context).size.width, MediaQuery.of(context).size.width/1.5)),
                   ),
                   child: Container(
                       alignment: Alignment.topCenter,
                       padding: EdgeInsets.fromLTRB(20, 70, 20, 0),
                       width: MediaQuery.of(context).size.width,
-                      child : Text("Today's Tip 1\n $tip", textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 15
-                        ),
+                      child : Column(
+                        children: [
+                          Text("Today's Tips", textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: Theme.of(context).accentColor
+                            ),
+                          ),
+                          SizedBox(height: 5,),
+                          Text(" $tip ", textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.grey[800]
+                            ),
+                          ),
+                        ],
                       )
                   ),
                 ),
@@ -211,7 +217,7 @@ class _HomePageState extends State<HomePage> {
                   ),
 
                   Expanded(
-                      flex: 5,
+                      flex: 6,
                       child: Container(
                         alignment: Alignment.center,
                         child: Row(
@@ -254,26 +260,35 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         Positioned(
-          top: 160,
-          left: MediaQuery.of(context).size.width/2 -80,
-          child: Container(
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: RadialGradient(
-                colors: [Colors.white, Color(0xffb9a6ed)],
+            top: MediaQuery.of(context).size.height*0.26,
+            left: MediaQuery.of(context).size.width/2 -80,
+            child: Container(
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [Colors.white, Colors.white70,Color(0xffb9a6ed)],
+                ),
               ),
-            ),
-            child: Stack(
-              children: [
-                CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  child: _waveWidget(),
-                  radius: 80,
-                )
-              ],
-            ),
-          )
+              child: Stack(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.transparent,
+                    child: _waveWidget(),
+                    radius: 80,
+                  ),
+                  Positioned(
+                    //bottom: MediaQuery.of(context).size.height,
+                    bottom: 15,
+                    right: 50,
+                    left: 50,
+
+                    child: Image(image: AssetImage('assets/images/bnda.png'),),
+
+                  )
+                ],
+              ),
+            )
         ),
       ],
     );
